@@ -1,4 +1,3 @@
-import numpy
 import streamlit as st
 import random
 
@@ -29,9 +28,9 @@ if chioce == "Welcome Memes":
 
 st.info("""
 ### Note
-* All the memes are downloaded somewhere from the internet. 
-* We do not own the content. 
-* But we love the content.
+* All the memes are downloaded somewhere from the internet 🤗
+* We do not own the content 😶 
+* But we love the content 😍
 
 ### Want to contribute?
 Simple. Upload your own memes to the Github repository.
