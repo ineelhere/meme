@@ -4,7 +4,7 @@ import random
 from sources import *
 
 st.sidebar.title("Meme Priority")
-thelist = ["Hera Pheri Memes", "Welcome Memes"]
+thelist = ["Hera Pheri Memes", "Welcome Memes", "Kota Factory Reality"]
 chioce = st.sidebar.radio("Haan, idhar pehle dabaneka", thelist )
 
 st.title("**memeScheme**")
@@ -25,8 +25,13 @@ if chioce == "Hera Pheri Memes":
     
 if chioce == "Welcome Memes":
     path = "./welcome/welcome_"
-    img_num = str(random.randint(0,20))
+    img_num = str(random.randint(0,28))
     st.sidebar.button("Aloo, leyloooo. Kaande, leyloooo", get_memes(path, img_num))
+
+if chioce == "Kota Factory Reality":
+    path = "./kotafactory/kotafactory_"
+    img_num = str(random.randint(0,26))
+    st.sidebar.button("Not everything is a meme.", get_memes(path, img_num))
 
 st.success("""
 ### Note
