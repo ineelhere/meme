@@ -1,5 +1,7 @@
+import numpy
 import streamlit as st
 import random
+from sources import *
 
 st.sidebar.title("Meme Priority")
 thelist = ["Hera Pheri Memes", "Welcome Memes"]
@@ -26,13 +28,25 @@ if chioce == "Welcome Memes":
     img_num = str(random.randint(0,20))
     st.sidebar.button("Aloo, leyloooo. Kaande, leyloooo", get_memes(path, img_num))
 
-st.info("""
+st.success("""
 ### Note
 * All the memes are downloaded somewhere from the internet 🤗
 * We do not own the content 😶 
 * But we love the content 😍
-
-### Want to contribute?
-Simple. Upload your own memes to the Github repository.
-
 """)
+st.image("https://pbs.twimg.com/profile_banners/1248075734603550720/1586524553/1500x500", width=700)
+st.sidebar.info("""
+### Want to contribute? It's Simple. 
+* Share the meme urls with us in a csv file and upload them to the [Github repository](https://github.com/ineelhere/meme) with a [Pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+* OR, directly upload the memes to the [Github repository](https://github.com/ineelhere/meme) with a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+* We will add the memes to the website.
+
+##### Points to note:
+* Don't use any political/offensive/obscene/sexual language in the memes. Yeah, keep them simple.
+* Your meme should make the audience laugh. Not attack or insult them.
+* Don't use any racist or sexist language in the memes.
+* Don't use hate speech in the memes.
+""")
+
+if st.checkbox("Show the source for these Memes"):
+    sources()
