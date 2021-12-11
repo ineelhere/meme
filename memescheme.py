@@ -1,4 +1,3 @@
-import numpy
 import streamlit as st
 import random
 from sources import *
@@ -33,6 +32,7 @@ if chioce == "Kota Factory Reality":
     img_num = str(random.randint(0,26))
     st.sidebar.button("Not everything is a meme.", get_memes(path, img_num))
 
+st.write("**P.S. - Not everything is a meme 🙂**")
 st.success("""
 ### Note
 * All the memes are downloaded somewhere from the internet 🤗
