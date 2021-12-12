@@ -3,34 +3,43 @@ import random
 from sources import *
 
 st.sidebar.title("Meme Priority")
-thelist = ["Hera Pheri Memes", "Welcome Memes", "Kota Factory Reality"]
+thelist = ["Hera Pheri Memes", "Welcome Memes", "Khichdi Memes", "Kota Factory Reality"]
 chioce = st.sidebar.radio("Haan, idhar pehle dabaneka", thelist )
 
 st.title("**memeScheme**")
+st.write("#### `vi-shudh parivaarik memes`")
 
 def get_memes(path, img_num):
     try:
         st.image(path+img_num+".jpg", width=600)
     except FileNotFoundError:
-        try:
-            st.image(path+img_num+".png")
-        except FileNotFoundError:
-            st.image("https://media.makeameme.org/created/hmmm-nope-try.jpg")
+        st.image(path+img_num+".png")
+    except FileNotFoundError:
+        st.image(path+img_num+".jpeg", width=600)
+    except AttributeError:
+        st.image("https://media.makeameme.org/created/hmmm-nope-try.jpg")   
+    except FileNotFoundError:
+        st.image("https://media.makeameme.org/created/hmmm-nope-try.jpg")
 
 if chioce == "Hera Pheri Memes":
     path = "./herapheri/herapheri_"
-    img_num = str(random.randint(0,600))
+    img_num = str(random.randint(1,536))
     st.sidebar.button("Abhi majja ayega na bhidu!", get_memes(path, img_num))
     
 if chioce == "Welcome Memes":
     path = "./welcome/welcome_"
-    img_num = str(random.randint(0,28))
+    img_num = str(random.randint(1,28))
     st.sidebar.button("Aloo, leyloooo. Kaande, leyloooo", get_memes(path, img_num))
 
 if chioce == "Kota Factory Reality":
     path = "./kotafactory/kotafactory_"
-    img_num = str(random.randint(0,26))
+    img_num = str(random.randint(1,26))
     st.sidebar.button("Not everything is a meme.", get_memes(path, img_num))
+
+if chioce == "Khichdi Memes":
+    path = "./khichdi/khichdi_"
+    img_num = str(random.randint(1,61))
+    st.sidebar.button("Khichdi, khichdi, khichdi", get_memes(path, img_num))
 
 st.write("**P.S. - Not everything is a meme 🙂**")
 st.success("""
